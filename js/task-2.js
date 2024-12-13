@@ -25,29 +25,12 @@ const images = [
   },
 ];
 
-// const galleryListAdd = document.querySelector('.gallery');
-
-// const galleryItemsCards = images.map(({url, alt}) => {
-//  return `<li><img src="${url}" alt="${alt}"></li>`; 
-// }).join('');
-  
-// galleryListAdd.insertAdjacentHTML('beforeend', galleryItemsCards);
-
-const galleryCardEl = imagesInfo => {
-
-  const galleryItemEl = document.createElement('li');
-
-  galleryItemEl.classList.add('item-gallery');
-
-const galleryImgEl = document.createElement('img');
-
-  galleryImgEl.src = imagesInfo.url;
-  galleryImgEl.alt = imagesInfo.alt;
-
-galleryItemEl.append(galleryImgEl);
-
-return galleryItemEl;
-
+const galleryCardAdd = (imagesInfo) => {
+  return `<li><img src = '${imagesInfo.url}' alt = '${imagesInfo.alt}'></li>`;
 };
 
-console.log(galleryCardEl(images[0]));
+const galleryElArr = images.map((image) => galleryCardAdd(image)).join("");
+
+const galleryListEl = document.querySelector(".gallery");
+
+galleryListEl.insertAdjacentHTML("beforeend", galleryElArr);
