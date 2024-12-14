@@ -33,7 +33,7 @@ function destroyBoxes() {
 }
 
 createButton.addEventListener('click', () => {
-const amount = perseInt(input.value, 10);
+const amount = parseInt(input.value, 10);
 
 if (amount >= 1 && amount <= 100) {
   createBoxes(amount);
